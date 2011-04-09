@@ -14,34 +14,34 @@ package
 		[Embed(source = 'assets/bombe.png')] 
 		private const BOMBE:Class;
 		
-		public function Myentity2() 
+		public function Myentity2(_x:int, _y:int) 
 		{
 			graphic = new Image(BOMBE);
 			setHitbox(90, 90);
 			type = "MyEntity2";
-			y = 200;
-			x = 300;
+			y = _y;
+			x = _x;
 		}
 		
 		public function destroy():void 
 		{
+			
+			trace("bombe detruit");
 			FP.world.remove(this);
 		}
 		
 		override public function update():void
 		{
-			trace("MyEntity2 updates.");
-			
-			if (Input.check(Key.R))
-			{
-				y = 200;
-				x = 300;
-			}
-			
+			y += 1;
 			if (collide("MyEntity", x, y))
 			{
 				//si le vaisseau entre en colision avec l'avion
 
+			}
+			if (y > FP.height )
+			{
+				trace("objet suprimé");
+				destroy();
 			}
 		}
 		

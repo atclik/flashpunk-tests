@@ -32,8 +32,7 @@ package
 		override public function update():void
 		//boucle de rafraichissement
 		{
-			trace("MyEntity updates.");
-			
+			/*
 			var b:Myentity2 = collide("MyEntity2", x, y) as Myentity2;
 			if (b)
 			{
@@ -64,14 +63,14 @@ package
 			{
 				//bouton de tir enfoncé
 				shoot.play();
+			}
 				
 			if (collide("MyEntity2", x, y))
 			{
 				//si le l'avion entre en colision avec le vaisseau
 				
 			}
-
-			}
+			*/
 		}
 		
 	}
