@@ -74,9 +74,9 @@ package
 			
 			
 			
-			if (time >= 2)
+			if (time >= 1)
 			{
-				add(new Myentity2(randRange(20, 620), 25));
+				add(new Myentity2(randRange(20, 620), -20));
 				time = 0;
 			}
 			super.update();
