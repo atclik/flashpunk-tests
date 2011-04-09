@@ -43,21 +43,40 @@ package
 			{
 				//la barre espace est enfoncée
 				joueur.y -= 5;
+				if (joueur.y < 0)
+				{
+					trace("appareilbloqué");
+					joueur.y += 5;
+				}
 			}
 			if (Input.check(Key.RIGHT))
 			{
 				//le bouton droite est efoncé
 				joueur.x += 5;
+				if (joueur.x > 578)
+				{
+					trace("appareilbloqué");
+					joueur.x -= 5;
+				}
 			}
 			if (Input.check(Key.LEFT))
 			{
 				//le bouton gauche est enclenché
 				joueur.x -= 5;
+				if (joueur.x < 0)
+				{
+					trace("appareilbloqué");
+					joueur.x += 5;
+				}
 			}
 			if (Input.check(Key.DOWN))
 			{
-				//le bouton r "reload" est enclenché
 				joueur.y += 5;
+				if (joueur.y > 420)
+				{
+					trace("appareilbloqué");
+					joueur.y -= 5;
+				}
 			}
 			if (Input.pressed(Key.SPACE))
 			{
