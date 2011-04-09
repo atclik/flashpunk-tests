@@ -26,8 +26,7 @@ package
 			//}
 			joueur = new MyEntity();
 			add(joueur);
-		}
-		
+		}	
 		
 		override public function update():void
 		{
