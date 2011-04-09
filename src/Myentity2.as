@@ -33,11 +33,7 @@ package
 		override public function update():void
 		{
 			y += 1;
-			if (collide("MyEntity", x, y))
-			{
-				//si le vaisseau entre en colision avec l'avion
-
-			}
+			
 			if (y > FP.height )
 			{
 				trace("objet suprimé");

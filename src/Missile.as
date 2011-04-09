@@ -43,6 +43,11 @@ package
 				destroy();
 				b.destroy();
 			}
+			//detruit le missile qui sort de l'ecran
+			if (y < 0)
+			{
+				destroy();
+			}
 		}
 		
 	}

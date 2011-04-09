@@ -7,6 +7,7 @@ package
 	import net.flashpunk.utils.Input; 
 	import net.flashpunk.utils.Key;
 	import net.flashpunk.Sfx;
+	import net.flashpunk.graphics.Spritemap;
 	
 	/**
 	 * ...
@@ -16,22 +17,20 @@ package
 	{
 		public var time:Number = 0;
 		private var joueur:MyEntity;
+	    
 		public function MyWorld() 
 		{
 			var i:Number = 1;
-			//while (i < 100)
-			//{
-				//add(new Myentity2);
-				//i++;
-			//}
 			joueur = new MyEntity();
 			add(joueur);
+			//positionnement du joueur
+			joueur.x = 300;
+			joueur.y = 300;
 		}	
 		
 		override public function update():void
 		{
 			time += FP.elapsed;
-			
 			
 			var b:Myentity2 = joueur.collide("MyEntity2", joueur.x, joueur.y) as Myentity2;
 			if (b)
@@ -45,7 +44,6 @@ package
 				joueur.y -= 5;
 				if (joueur.y < 0)
 				{
-					trace("appareilbloqué");
 					joueur.y += 5;
 				}
 			}
@@ -55,7 +53,6 @@ package
 				joueur.x += 5;
 				if (joueur.x > 578)
 				{
-					trace("appareilbloqué");
 					joueur.x -= 5;
 				}
 			}
@@ -65,7 +62,6 @@ package
 				joueur.x -= 5;
 				if (joueur.x < 0)
 				{
-					trace("appareilbloqué");
 					joueur.x += 5;
 				}
 			}
@@ -74,7 +70,6 @@ package
 				joueur.y += 5;
 				if (joueur.y > 420)
 				{
-					trace("appareilbloqué");
 					joueur.y -= 5;
 				}
 			}
@@ -84,11 +79,10 @@ package
 				joueur.shoot.play();
 				add(new Missile(joueur.x+20,joueur.y));
 			}
-				
+
 			if (joueur.collide("MyEntity2", joueur.x, joueur.y))
 			{
 				//si le l'avion entre en colision avec le vaisseau
-			
 			}
 			
 			
