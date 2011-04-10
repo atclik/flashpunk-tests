@@ -17,13 +17,13 @@ package
 	{
 		public var time:Number = 0;
 		private var joueur:MyEntity;
+		//private var explo:Explosion;
 	    
 		public function MyWorld() 
 		{
 			var i:Number = 1;
 			joueur = new MyEntity();
 			add(joueur);
-			//positionnement du joueur
 			joueur.x = 300;
 			joueur.y = 300;
 		}	
@@ -32,11 +32,16 @@ package
 		{
 			time += FP.elapsed;
 			
-			var b:Myentity2 = joueur.collide("MyEntity2", joueur.x, joueur.y) as Myentity2;
-			if (b)
-			{
-				b.destroy();
-			}
+			//var b:Myentity2 = joueur.collide("MyEntity2", joueur.x, joueur.y) as Myentity2;
+			//if (b)
+			//{
+				//trace("PERDU");
+				//add(explo);
+				//explo.x = joueur.x;
+				//explo.y = joueur.y;
+				//explo.update();
+				//b.destroy();
+			//}
 			
 			if (Input.check(Key.UP))
 			{
@@ -83,6 +88,7 @@ package
 			if (joueur.collide("MyEntity2", joueur.x, joueur.y))
 			{
 				//si le l'avion entre en colision avec le vaisseau
+				//explo.play("explo1");
 			}
 			
 			
