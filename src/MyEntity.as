@@ -40,14 +40,6 @@ package
 		//boucle de rafraichissement
 		{
 			
-			if (collide("MyEntity2", x, y))
-			{
-				//replique.play();
-				trace("PERDU");
-				this.destroy();
-				
-			}
-
 		}
 		
 	}

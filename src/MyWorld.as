@@ -19,6 +19,7 @@ package
 		private var joueur:MyEntity;
 		private var ciel:Ciel;
 		private var satel:satelite;
+		private var explo:Explosion;
  		
 		[Embed(source = 'assets/stevenseagal.mp3')] 
 		private const START:Class;
@@ -47,17 +48,6 @@ package
 		override public function update():void
 		{
 			time += FP.elapsed;
-			
-			//var b:Myentity2 = joueur.collide("MyEntity2", joueur.x, joueur.y) as Myentity2;
-			//if (b)
-			//{
-				//trace("PERDU");
-				//add(explo);
-				//explo.x = joueur.x;
-				//explo.y = joueur.y;
-				//explo.update();
-				//b.destroy();
-			//}
 			
 			if (Input.check(Key.UP))
 			{
@@ -103,16 +93,18 @@ package
 
 			if (joueur.collide("MyEntity2", joueur.x, joueur.y))
 			{
-				//si le l'avion entre en colision avec une bombe
-				add(new Explosion(joueur.x, joueur.y));
+				//si le l'avion entre en colision avec une bombe il explose s'en suit une replique de CHUCK
+				trace("PERDU");
 				depart.stop();
+				add(new Explosion(joueur.x, joueur.y));
 				replique.play();
-				
+				joueur.destroy();
+				//explo.destroy();
 			}
 			
 			
 			
-			if (time >= 3)
+			if (time >= 0.8)
 			{
 				add(new Myentity2(randRange(20, 620), -20));
 				time = 0;

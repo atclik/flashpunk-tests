@@ -26,7 +26,6 @@ package
 		public function destroy():void 
 		{
 			
-			trace("bombe detruit");
 			FP.world.remove(this);
 		}
 		
