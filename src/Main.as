@@ -18,7 +18,6 @@ package
 		{
 			super(640, 480, 60, false);
 			FP.world = new MyWorld;
-
 		}
 		override public function init():void
 		{

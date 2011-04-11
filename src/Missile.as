@@ -15,7 +15,7 @@ package
 	{
 		[Embed(source = 'assets/missile-sprite.png')] 
 		private const MISSILE:Class;
-		public var missile:Spritemap = new Spritemap(MISSILE, 23, 97);
+		public var missile:Spritemap = new Spritemap(MISSILE, 24, 97);
 		
 		public function Missile(_x:int,_y:int)
 		{

@@ -14,9 +14,14 @@ package
 	
 	public class MyEntity extends Entity
 	{	
+		
 		[Embed(source = 'assets/avion2.png')]
 		private const PLAYER:Class;
 		
+		[Embed(source = 'assets/invasionusa.mp3')] 
+		private const PERDU:Class;
+		
+		public var replique:Sfx = new Sfx(PERDU);
 		
 		[Embed(source = 'assets/Grenade.mp3')] 
 		private const SHOOT:Class;
@@ -27,7 +32,7 @@ package
 		{
 			//Input.define("Jump", Key.Z, Key.UP); //memes touches 1 action
 			graphic = new Image(PLAYER);
-			setHitbox(64, 64);//voir doc pour centrer le collider
+			setHitbox(1, 1, -32, -32 );//voir doc pour centrer le collider
 			type = "MyEntity";
 		}
 
@@ -38,10 +43,12 @@ package
 		override public function update():void
 		//boucle de rafraichissement
 		{
+			
 			if (collide("MyEntity2", x, y))
 			{
+				//replique.play();
 				trace("PERDU");
-				this.destroy();
+				//this.destroy();
 				
 			}
 

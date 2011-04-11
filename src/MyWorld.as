@@ -17,7 +17,11 @@ package
 	{
 		public var time:Number = 0;
 		private var joueur:MyEntity;
-		//private var explo:Explosion;
+		private var explo:Explosion;
+		[Embed(source = 'assets/stevenseagal.mp3')] 
+		private const START:Class;
+		
+		public var depart:Sfx = new Sfx(START);
 	    
 		public function MyWorld() 
 		{
@@ -26,6 +30,7 @@ package
 			add(joueur);
 			joueur.x = 300;
 			joueur.y = 300;
+			depart.play();
 		}	
 		
 		override public function update():void
@@ -87,13 +92,13 @@ package
 
 			if (joueur.collide("MyEntity2", joueur.x, joueur.y))
 			{
-				//si le l'avion entre en colision avec le vaisseau
-				//explo.play("explo1");
+				//si le l'avion entre en colision avec une bombe
+				add(new Explosion(joueur.x, joueur.y));
 			}
 			
 			
 			
-			if (time >= 1)
+			if (time >= 3)
 			{
 				add(new Myentity2(randRange(20, 620), -20));
 				time = 0;

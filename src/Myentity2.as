@@ -17,7 +17,7 @@ package
 		public function Myentity2(_x:int, _y:int) 
 		{
 			graphic = new Image(BOMBE);
-			setHitbox(90, 90);
+			setHitbox(45, 45);
 			type = "MyEntity2";
 			y = _y;
 			x = _x;
