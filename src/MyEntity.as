@@ -18,10 +18,6 @@ package
 		[Embed(source = 'assets/avion2.png')]
 		private const PLAYER:Class;
 		
-		[Embed(source = 'assets/invasionusa.mp3')] 
-		private const PERDU:Class;
-		
-		public var replique:Sfx = new Sfx(PERDU);
 		
 		[Embed(source = 'assets/Grenade.mp3')] 
 		private const SHOOT:Class;
@@ -48,7 +44,7 @@ package
 			{
 				//replique.play();
 				trace("PERDU");
-				//this.destroy();
+				this.destroy();
 				
 			}
 

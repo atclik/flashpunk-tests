@@ -17,15 +17,26 @@ package
 	{
 		public var time:Number = 0;
 		private var joueur:MyEntity;
-		private var explo:Explosion;
+		private var ciel:Ciel;
+		private var satel:satelite;
+ 		
 		[Embed(source = 'assets/stevenseagal.mp3')] 
 		private const START:Class;
 		
+		[Embed(source = 'assets/invasionusa.mp3')] 
+		private const PERDU:Class;
+		
 		public var depart:Sfx = new Sfx(START);
+		
+		public var replique:Sfx = new Sfx(PERDU);
 	    
 		public function MyWorld() 
 		{
 			var i:Number = 1;
+			ciel = new Ciel();
+			add(ciel);
+			satel = new satelite();
+			add(satel); 
 			joueur = new MyEntity();
 			add(joueur);
 			joueur.x = 300;
@@ -94,6 +105,9 @@ package
 			{
 				//si le l'avion entre en colision avec une bombe
 				add(new Explosion(joueur.x, joueur.y));
+				depart.stop();
+				replique.play();
+				
 			}
 			
 			
