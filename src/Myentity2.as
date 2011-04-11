@@ -13,16 +13,18 @@ package
 	{	
 		[Embed(source = 'assets/bombe.png')] 
 		private const BOMBE:Class;
-		
+		//constructeur de bombe
 		public function Myentity2(_x:int, _y:int) 
 		{
 			graphic = new Image(BOMBE);
 			setHitbox(45, 45);
 			type = "MyEntity2";
+			//on recupere les valeurs placées en parametre lors de l'appel celles de la "fonction math random"----> x
+																						//"-20" ------------------> y
 			y = _y;
 			x = _x;
 		}
-		
+		//destructeur de bombe
 		public function destroy():void 
 		{
 			
@@ -30,9 +32,9 @@ package
 		}
 		
 		override public function update():void
-		{
+		{	//On fait descendre les bombes a l'ecran
 			y += 1;
-			
+			//si les bombes sortent de l'ecran par le bas on les detruit
 			if (y > FP.height )
 			{
 				trace("objet suprimé");

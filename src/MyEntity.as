@@ -14,7 +14,7 @@ package
 	
 	public class MyEntity extends Entity
 	{	
-		
+		//declarations
 		[Embed(source = 'assets/avion2.png')]
 		private const PLAYER:Class;
 		
@@ -24,6 +24,7 @@ package
 		
 		public var shoot:Sfx = new Sfx(SHOOT);
 		
+		//constructeur du joueur
 		public function MyEntity() 
 		{
 			//Input.define("Jump", Key.Z, Key.UP); //memes touches 1 action
@@ -31,15 +32,10 @@ package
 			setHitbox(1, 1, -32, -32 );//voir doc pour centrer le collider
 			type = "MyEntity";
 		}
-
+		//destructeur du joueur
 		public function destroy():void 
 		{
 			FP.world.remove(this);
-		}
-		override public function update():void
-		//boucle de rafraichissement
-		{
-			
 		}
 		
 	}
